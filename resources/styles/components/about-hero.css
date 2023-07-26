@@ -1,0 +1,29 @@
+.about-hero {
+  height: 100vh;
+}
+
+.about-hero_icon-wrapper {
+  height: 32px;
+  width: 32px;
+}
+
+.about-hero_icon {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.about-hero_left-image,
+.about-hero_right-image {
+  box-shadow: -6px 12px 14px 0px rgba(0, 0, 0, 0.12);
+}
+.about-hero_left-image::after {
+  content: '';
+  display: block;
+  padding-bottom: 78.81%;
+}
+
+.about-hero_right-image::after {
+  content: '';
+  display: block;
+  padding-bottom: 45.81%;
+}

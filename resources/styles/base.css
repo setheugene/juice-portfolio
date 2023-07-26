@@ -1,0 +1,112 @@
+:root {
+  --navbarHeight: 80px;
+
+  --topOffset: var(--navbarHeight);
+
+  --gutter: 1.5rem;
+}
+
+main.main {
+  padding-bottom: 137px;
+  position: relative;
+}
+
+body {
+  background-color: var(--colorLight);
+  padding-top: var(--navbarHeight);
+  position: relative;
+
+  --colorAccent: theme(colors.accent);
+  --colorLight: theme(colors.light);
+  --colorHeaders: theme(colors.headers);
+  --colorDark: theme(colors.dark);
+
+  .text-color-accent {
+    color: var(--colorAccent);
+  }
+  .text-color-headers {
+    color: var(--colorHeaders);
+  }
+  .text-color-dark {
+    color: var(--colorDark);
+  }
+}
+
+body.dark-mode {
+  --colorAccent: theme(colors.accentSecondary);
+  --colorLight: theme(colors.lightSecondary);
+  --colorHeaders: theme(colors.headersSecondary);
+  --colorDark: theme(colors.darkSecondary);
+}
+
+/* .loading-overlay {
+  position: absolute;
+  opacity: 1;
+  transition: all .5s;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+} */
+
+.logged-in {
+  --topOffset: calc(var(--navbarHeight) + 32px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(theme(spacing[gutter]) * -1);
+  margin-left: calc(theme(spacing[gutter]) * -1);
+}
+
+.col {
+  padding-left: theme(spacing[gutter]);
+  padding-right: theme(spacing[gutter]);
+}
+
+.aspect-square:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.aspect-horizontal::after {
+  content: '';
+  display: block;
+  padding-bottom: 67.14%;
+}
+
+.aspect-vertical::after {
+  content: '';
+  display: block;
+  padding-bottom: 133.81%;
+}
+
+.aspect-tall-square:after{
+  content: '';
+  display: block;
+  padding-bottom: 112.1%;
+}
+
+.aspect-short-square:after{
+  content: '';
+  display: block;
+  padding-bottom: 94.47%;
+}
+
+.fit-image {
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,5 @@
+.alternating-image-set + .alternating-image-set,
+.alternating-image-set + .masonry-grid,
+.masonry-grid + .masonry-grid {
+  margin-top: calc(var(--gutter) * 2);
+}

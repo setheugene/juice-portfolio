@@ -1,0 +1,16 @@
+.overlapping-gallery {
+  .left-image {
+    margin-top: 160px;
+  }
+
+  .center-image {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  img {
+    box-shadow: -6px 12px 14px 0px rgba(0, 0, 0, 0.12);
+  }
+}

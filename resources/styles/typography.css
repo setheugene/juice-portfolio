@@ -1,0 +1,147 @@
+.hdg-hero {
+  font-size: 80px;
+  font-family: Cormorant;
+  line-height: 106%;
+  letter-spacing: 0.8px;
+}
+
+h1,
+.hdg-1 {
+  font-family: theme(fontFamily[serif]);
+  font-size: 48px;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+
+  @screen md {
+    font-size: 64px;
+  }
+}
+
+h2,
+.hdg-2 {
+  font-family: theme(fontFamily[serif]);
+  font-size: 40px;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+
+  @screen md {
+    font-size: 48px;
+  }
+}
+
+h3,
+.hdg-3 {
+  font-family: theme(fontFamily[serif]);
+  font-size: 32px;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+
+  @screen md {
+    font-size: 40px;
+  }
+}
+
+h4,
+.hdg-4 {
+  font-family: theme(fontFamily[serif]);
+  font-size: 24px;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+  margin-bottom: 18px;
+
+  @screen md {
+    font-size: 32px;
+  }
+}
+
+h5,
+.hdg-5 {
+  font-family: theme(fontFamily[serif]);
+  font-size: 20px;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+
+  @screen md {
+    font-size: 24px;
+  }
+}
+
+h6,
+.hdg-6 {
+  font-family: theme(fontFamily[serif]);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 132%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  @screen md {
+    font-size: 16px;
+  }
+}
+
+.paragraph-large {
+  font-family: theme(fontFamily[sans]);
+  font-size: 16px;
+  line-height: 142%;
+
+  @screen md {
+    font-size: 18px;
+  }
+}
+
+.paragraph-default {
+  font-family: theme(fontFamily[sans]);
+  font-size: 16px;
+  line-height: 142%;
+}
+
+.paragraph-small {
+  font-family: theme(fontFamily[sans]);
+  font-size: 14px;
+  line-height: 142%;
+}
+
+@keyframes filling {
+  from {
+    background-position: center 0;
+  }
+
+  to {
+    background-position: center 100%;
+  }
+}
+
+.outline-text {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 102%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  background: linear-gradient(to top, var(--colorAccent) 50%, var(--colorAccent) 50.1%, transparent 50.2%, transparent 100%);
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  color: #FFFFFF;
+  animation: filling 3s ease forwards;
+  -webkit-text-stroke: 1px theme(colors[dark]);
+}
+
+.animated-outline {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 102%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+  position: relative;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  overflow: hidden;
+}

@@ -1,0 +1,36 @@
+.one-column-banner {
+  padding: 55px 0 100px;
+}
+
+.one-column-banner_content-wrapper {
+  border: 3px solid var(--colorAccent);
+  padding: 72px 24px;
+}
+
+.one-column-banner_top-asset {
+  height: 118px;
+  width: 118px;
+  position: absolute;
+  left: 39px;
+  top: -54px;
+}
+
+.one-column-banner_top-asset img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.one-column-banner_bottom-asset {
+  height: 289px;
+  width: 212px;
+  position: absolute;
+  right: -106px;
+  bottom: -145px;
+}
+
+.one-column-banner_bottom-asset img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
