@@ -45,6 +45,12 @@
         @if(get_row_layout() == 'one_column_banner') 
           @include('components.one-column-banner')
         @endif
+        @if(get_row_layout() == 'content_accordion') 
+          @include('components.content-accordion')
+        @endif
+        @if(get_row_layout() == 'appearing_text') 
+          @include('components.appearing-text')
+        @endif
       @endwhile
     @endif
   </main>

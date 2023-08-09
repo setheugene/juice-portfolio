@@ -110,3 +110,36 @@ body.dark-mode {
     object-fit: cover;
   }
 }
+
+.expand {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+
+.horizontal {
+  display: inline-block;
+  background-color: theme(colors[headers]);
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vertical {
+  display: inline-block;
+  background-color: theme(colors[headers]);
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .5s ease-in;
+}
+
+.active .vertical {
+  height: 0;
+}

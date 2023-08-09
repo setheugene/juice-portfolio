@@ -1,0 +1,13 @@
+.content-accordion_content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+
+
+
+.content-accordion {
+  padding-bottom: 300px;
+}

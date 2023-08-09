@@ -126,8 +126,61 @@ domReady(async () => {
     //   },
     // });
 
+    if ($('.appearing-text').length > 0) {
+      $(".appearing-text").each(function () {
+        const item = $(this).find('.appearing-text__item');
+        item.each(function () {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: this,
+              start: "top bottom",
+              end: "center center",
+              pin: false,
+              // markers: true,
+              scrub: true,
+              stagger: 0.25
+            }
+          });
+          tl.from($(this), { x: '55vw' });
+          // tl.fromTo(
+          //   $(this),
+          //   { filter: "blur(10px)", opacity: "0", ease: "linear" },
+          //   { filter: "blur(0px)", opacity: "1", ease: "linear" }
+          // );
+          // tl.fromTo(
+          //   $(this),
+          //   { filter: "blur(0px)", opacity: "1", ease: "linear" },
+          //   { filter: "blur(10px)", opacity: "0", ease: "linear" }
+          // );
+        });
+        // const itemsHeight = $(this).find('.appearing-text_column').height() / 2;
 
+        // ScrollTrigger.create({
+        //   trigger: $(this).find(".appearing-text_title"),
+        //   pin: true,
+        //   start: "center center",
+        //   end: `bottom top-=${itemsHeight}`,
+        //   markers: true,
+        // });
+      });
+    }
 
+    if ($('.content-accordion').length > 0) {
+      var acc = document.getElementsByClassName("content-accordion_button");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    }
 
 
     window.toggleGridOverlay = function () {

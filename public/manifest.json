@@ -1,16 +1,11 @@
 {
-  "app.js": "js/app.js",
-  "editor.js": "js/editor.js",
-  "runtime.js": "js/runtime.js",
-  "js/dynamic/node_modules_roots_bud-client_lib_hot_client_js.chunk.js": "js/dynamic/node_modules_roots_bud-client_lib_hot_client_js.chunk.js",
-  "js/dynamic/node_modules_roots_bud-client_lib_hot_components_indicator_index_js.chunk.js": "js/dynamic/node_modules_roots_bud-client_lib_hot_components_indicator_index_js.chunk.js",
-  "js/dynamic/node_modules_roots_bud-client_lib_hot_components_overlay_index_js.chunk.js": "js/dynamic/node_modules_roots_bud-client_lib_hot_components_overlay_index_js.chunk.js",
-  "images/arrow-down.svg": "images/arrow-down.svg",
-  "images/play.svg": "images/play.svg",
-  "app.js.map": "js/app.js.map",
-  "editor.js.map": "js/editor.js.map",
-  "runtime.js.map": "js/runtime.js.map",
-  "node_modules_roots_bud-client_lib_hot_client_js.chunk.js.map": "js/dynamic/node_modules_roots_bud-client_lib_hot_client_js.chunk.js.map",
-  "node_modules_roots_bud-client_lib_hot_components_indicator_index_js.chunk.js.map": "js/dynamic/node_modules_roots_bud-client_lib_hot_components_indicator_index_js.chunk.js.map",
-  "node_modules_roots_bud-client_lib_hot_components_overlay_index_js.chunk.js.map": "js/dynamic/node_modules_roots_bud-client_lib_hot_components_overlay_index_js.chunk.js.map"
+  "app.css": "css/app.9d1123.css",
+  "app.js": "js/app.9cf62b.js",
+  "editor.css": "css/editor.31d6cf.css",
+  "editor.js": "js/editor.359dbc.js",
+  "runtime.js": "js/runtime.06fab3.js",
+  "js/259.6cf96b.js": "js/259.6cf96b.js",
+  "js/360.b199fb.js": "js/360.b199fb.js",
+  "images/arrow-down.svg": "images/arrow-down.05888d.svg",
+  "images/play.svg": "images/play.c5d033.svg"
 }
