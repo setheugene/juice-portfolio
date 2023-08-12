@@ -190,99 +190,215 @@ if( function_exists('acf_add_options_page') ) {
 
 
 // // Callback function to insert 'styleselect' into the $buttons array
- function my_mce_buttons_2( $buttons ) {
- 	array_unshift( $buttons, 'styleselect' );
- 	return $buttons;
- }
-// // Register our callback to the appropriate filter
- add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
+//  function my_mce_buttons_2( $buttons ) {
+//  	array_unshift( $buttons, 'styleselect' );
+//  	return $buttons;
+//  }
+// // // // Register our callback to the appropriate filter
+//  add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 
 
-// // Callback function to filter the MCE settings
- function my_mce_before_init_insert_formats( $init_array ) {  
-// 	// Define the style_formats array
- 	$style_formats = array(  
- 		        array(  
-             'title' => 'H1',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-             'classes' => 'hdg-1',
-             'wrapper' => true,
+// // // Callback function to filter the MCE settings
+//  function my_mce_before_init_insert_formats( $init_array ) {  
+// // 	// Define the style_formats array
+//  	$style_formats = array(  
+//       array(  
+//       'title' => 'H1',  
+//       'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//       'classes' => 'hdg-1',
+//       'wrapper' => true,
+//   ),  
+//          array(  
+//              'title' => 'H2',  
+//              'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//              'classes' => 'hdg-2',
+//              'wrapper' => true,
+//          ),
+//          array(  
+//              'title' => 'H3',  
+//              'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 
+//              'classes' => 'hdg-3',
+//              'wrapper' => true,
+//          ),
+//                  array(  
+//              'title' => 'H4',  
+//              'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//              'classes' => 'hdg-4',
+//              'wrapper' => true,
              
-         ),  
-         array(  
-             'title' => 'H2',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-             'classes' => 'hdg-2',
-             'wrapper' => true,
-         ),
-         array(  
-             'title' => 'H3',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 
-             'classes' => 'hdg-3',
-             'wrapper' => true,
-         ),
-                 array(  
-             'title' => 'H4',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-             'classes' => 'hdg-4',
-             'wrapper' => true,
-             
-         ),  
-         array(  
-             'title' => 'H5',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-             'classes' => 'hdg-5',
-             'wrapper' => true,
-         ),
-         array(  
-             'title' => 'H6',  
-             'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-             'classes' => 'hdg-6',
-             'wrapper' => true,
-         ),
-         array(  
-           'title'    => 'Large Paragraph Text : 18px',
-           'classes'  => 'paragraph-large',
-           'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-           'wrapper'  => false
+//          ),  
+//          array(  
+//              'title' => 'H5',  
+//              'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//              'classes' => 'hdg-5',
+//              'wrapper' => true,
+//          ),
+//          array(  
+//              'title' => 'H6',  
+//              'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//              'classes' => 'hdg-6',
+//              'wrapper' => true,
+//          ),
+//          array(  
+//            'title'    => 'Large Paragraph Text : 18px',
+//            'classes'  => 'paragraph-large',
+//            'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//            'wrapper'  => false
            
-       ),  
-       array(  
-         'title'    => 'Regular Paragraph : 16px',
-         'classes'  => 'paragraph-default',
-         'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-         'wrapper'  => false
-       ),
-       array(  
-         'title'    => 'Small Paragraph Text : 14px',
-         'classes'  => 'paragraph-small',
-         'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
-         'wrapper'  => false
-       ),
-       array(
-         'title'    => 'Primary Button',
-         'classes'  => 'primary-btn',
-         'selector' => 'a',
-         'wrapper'  => false
-       ),
-       array(
-         'title'    => 'Orange Text',
-         'classes'  => 'text-color-accent',
-         'selector' => 'a',
-         'wrapper'  => false
-       ),
- 	);  
+//        ),  
+//        array(  
+//          'title'    => 'Regular Paragraph : 16px',
+//          'classes'  => 'paragraph-default',
+//          'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//          'wrapper'  => false
+//        ),
+//        array(  
+//          'title'    => 'Small Paragraph Text : 14px',
+//          'classes'  => 'paragraph-small',
+//          'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+//          'wrapper'  => false
+//        ),
+//        array(
+//          'title'    => 'Primary Button',
+//          'classes'  => 'primary-btn',
+//          'selector' => 'a',
+//          'wrapper'  => false
+//        ),
+//        array(
+//          'title'    => 'Orange Text',
+//          'classes'  => 'text-color-accent',
+//          'selector' => 'a',
+//          'wrapper'  => false
+//        ),
+//  	);  
 
- $init_array['style_formats'] = wp_json_encode( $style_formats );  
+//  $init_array['style_formats'] = wp_json_encode( $style_formats );  
 
 	
- 	return $init_array;  
+//  	return $init_array;  
   
- } 
+//  } 
 
- add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );  
+//  add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );  
 
 
+ 
+/////////////////////////////////////////////////////////////////////////
+add_filter( 'mce_buttons', function( $buttons ) {
+	array_push( $buttons, 'styleselect' );
+	return $buttons;
+} );
+
+add_filter( 'tiny_mce_before_init', function( $settings ) {
+	$new_styles = [
+		[
+			'title'	=> __( 'Heading Styles', 'text_domain' ),
+			'items'	=> [
+        [ 'title' => 'Heading One', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
+        [ 'title' => 'Heading Two', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
+        [ 'title' => 'Heading Three', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
+        [ 'title' => 'Heading Four', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
+        [ 'title' => 'Heading Five', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
+        [ 'title' => 'Heading Six', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
+			],
+		],
+    [
+			'title'	=> __( 'Colors', 'text_domain' ),
+			'items'	=> [
+        [ 'title' => 'Headers', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-headers', 'exact' => '1' ],
+        [ 'title' => 'Dark', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-dark', 'exact' => '1' ],
+        [ 'title' => 'Light', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-light', 'exact' => '1' ],
+        [ 'title' => 'White', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-white', 'exact' => '1' ],
+        [ 'title' => 'Accent', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-accent', 'exact' => '1' ],
+			],
+		],
+    [
+			'title'	=> __( 'Buttons', 'text_domain' ),
+			'items'	=> [
+        [ 'title' => 'Dark Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'bnt-dark', 'exact' => '1' ],
+        [ 'title' => 'Light Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-light', 'exact' => '1' ],
+        [ 'title' => 'Arrow Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-arrow', 'exact' => '1' ],
+			],
+		],
+	];
+	$settings['style_formats_merge'] = true;
+	$settings['style_formats'] = json_encode( $new_styles );
+	return $settings;
+} );
+
+
+
+
+////////////////////////////////////////////////////////////////
+// function my_wpeditor_buttons( $buttons, $editor_id ) {
+//   if ( 'content' != $editor_id ) {
+//     return $buttons;
+//   }
+
+//   array_unshift( $buttons, 'styleselect' );
+//   return $buttons;
+// }
+// add_filter( 'mce_buttons_2', 'my_wpeditor_buttons', 10, 2 );
+
+// function my_wpeditor_formats_options( $settings ) {
+
+//     $custom_styles_formats = [
+//         [ 'title' => 'Heading Styles', 'type' => 'group',
+//             'items' => [
+                // [ 'title' => 'Heading One', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
+                // [ 'title' => 'Heading Two', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
+                // [ 'title' => 'Heading Three', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
+                // [ 'title' => 'Heading Four', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
+                // [ 'title' => 'Heading Five', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
+                // [ 'title' => 'Heading Six', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
+//             ]
+//         ], 
+
+//         [ 'title' => 'Buttons', 'type' => 'group',
+//             'items' => [
+//                 [ 'title' => 'Light Button', 'selector' => 'a, button', 'classes' => 'btn-light', 'exact' => '1' ],
+//                 [ 'title' => 'Dark Button', 'selector' => 'a, button', 'classes' => 'btn-dark', 'exact' => '1' ],
+//             ]
+//         ], 
+
+//         [ 'title' => 'Color', 'type' => 'group',
+//             'items' => [
+//                 [ 'title' => 'Headers', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-headers', 'exact' => '1' ],
+//                 [ 'title' => 'Dark', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-dark', 'exact' => '1' ],
+//                 [ 'title' => 'Light', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-light', 'exact' => '1' ],
+//                 [ 'title' => 'White', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-white', 'exact' => '1' ],
+//                 [ 'title' => 'Accent', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-accent', 'exact' => '1' ],
+//             ]
+//         ], 
+//     ];
+
+//   $settings['style_formats'] = json_encode( $custom_styles_formats );
+//   return $settings;
+
+// }
+// add_filter( 'tiny_mce_before_init', 'my_wpeditor_formats_options' );
+
+// add_filter( 'tiny_mce_before_init', function( $settings ){
+
+// 	$settings['block_formats'] = 'Paragraph=p;Heading=h2;Subheading=h3';
+
+// 	return $settings;
+
+// } );
+
+function ll_acf_admin_footer() {
+  ?>
+  <script>
+    ( function( $) {
+      acf.add_filter( 'wysiwyg_tinymce_settings', function( mceInit, id, $field ) {
+        mceInit.body_class += ' ' + $field[0].classList;
+        return mceInit;
+      });
+    })( jQuery );
+  </script>
+<?php
+}
+add_action('acf/input/admin_footer', 'll_acf_admin_footer');
 
 function my_theme_add_editor_styles() {
   add_editor_style( 'resources/styles/typography.css' );

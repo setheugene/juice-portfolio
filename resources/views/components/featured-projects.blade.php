@@ -3,14 +3,14 @@ $args = array(
   'post_type'       => 'projects',
   'post_status'     => 'publish',
   'orderby'         => 'menu_order',
-  'order'           => 'ASC',
+  'order'           => 'ASC', 
   'posts_per_page'  => -1,
 );
 $projects = get_posts($args);
 ?>
 <section class="featured-projects pb-11 relative z-10">
   <div class="container">
-    <div class="row items-end pt-11 featured-projects_pinned bg-light z-50 relative">
+    <div class="row items-end pt-11 duration-300 featured-projects_pinned before:duration-300 z-50 relative">
       <div class="col w-full md:w-1/2">
         <?php if( !empty(get_sub_field('featured_projects_heading'))) : ?>
           <h2 class="hdg-hero text-color-accent">

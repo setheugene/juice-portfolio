@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src='https://cdn.tiny.cloud/1/no-api-key/tinymce/4/tinymce.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swup/2.0.8/swup.min.js" integrity="sha512-zarvzsuTnsmBdyGdtt3MSQYTkEBX9aGrG4P9RjNJXPmmNromygeUkZS4NOM6/Ht0O8cvzU0glG+FKULEMDgqbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant&family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">

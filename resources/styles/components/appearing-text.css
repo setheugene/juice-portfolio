@@ -6,4 +6,5 @@
   line-height: 132%;
   letter-spacing: 0.48px;
   text-transform: uppercase;
+  border-bottom: 1px solid var(--colorHeaders);
 }

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col w-full lg:w-1/3 mb-8 lg:mb-0">
-        <h2 class="hdg-2 text-accent">
+        <h2 class="hdg-2 text-color-accent">
           <?php echo get_sub_field('content_accordion_heading') ?? ''; ?>
         </h2>
       </div>
@@ -11,9 +11,9 @@
       <div class="col w-full lg:w-2/3">
        <?php if (!empty( get_sub_field('content_accordion_panels') )) : ?>
         <?php foreach( get_sub_field('content_accordion_panels') as $panel ) : ?>
-          <button class="content-accordion_button flex items-center text-accent py-6 w-full flex-wrap">
+          <button class="content-accordion_button flex items-center text-color-accent py-6 w-full flex-wrap">
             <div class="w-full lg:w-1/4">
-              <div class="text-dark font-bold text-left mb-3 lg:mb-0">
+              <div class="text-color-dark font-bold text-left mb-3 lg:mb-0">
                 <?php echo $panel['pre-title'] ?? ''; ?>
               </div>
             </div>
@@ -27,7 +27,7 @@
               </div>
             </div>
           </button>
-          <div class="content-accordion_content border-b border-headers flex flex-wrap">
+          <div class="content-accordion_content flex flex-wrap">
             <div class="w-full lg:w-1/4">
 
             </div>

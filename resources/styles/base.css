@@ -12,6 +12,7 @@ main.main {
 }
 
 body {
+  transition: all .3s;
   background-color: var(--colorLight);
   padding-top: var(--navbarHeight);
   position: relative;
@@ -20,16 +21,7 @@ body {
   --colorLight: theme(colors.light);
   --colorHeaders: theme(colors.headers);
   --colorDark: theme(colors.dark);
-
-  .text-color-accent {
-    color: var(--colorAccent);
-  }
-  .text-color-headers {
-    color: var(--colorHeaders);
-  }
-  .text-color-dark {
-    color: var(--colorDark);
-  }
+  --colorWhite: theme(colors.white);
 }
 
 body.dark-mode {
@@ -37,6 +29,53 @@ body.dark-mode {
   --colorLight: theme(colors.lightSecondary);
   --colorHeaders: theme(colors.headersSecondary);
   --colorDark: theme(colors.darkSecondary);
+  --colorWhite: theme(colors.whiteSecondary);
+}
+
+.text-color-accent {
+  color: var(--colorAccent);
+}
+.text-color-headers {
+  color: var(--colorHeaders);
+}
+.text-color-dark {
+  color: var(--colorDark);
+}
+.text-color-white {
+  color: var(--colorWhite);
+}
+.text-color-light {
+  color: var(--colorLight);
+}
+
+.transition-fade {
+  opacity: 1;
+  transition: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.transition-drop {
+  transition: 500ms;
+  transform: translateY(0);
+}
+
+html.is-animating .transition-drop {
+  transform: translateY(100%);
+}
+
+main {
+  overflow: hidden;
 }
 
 /* .loading-overlay {
@@ -119,7 +158,7 @@ body.dark-mode {
 
 .horizontal {
   display: inline-block;
-  background-color: theme(colors[headers]);
+  background-color: var(--colorHeaders);
   position: absolute;
   width: 20px;
   height: 1px;

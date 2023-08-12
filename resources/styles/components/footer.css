@@ -1,21 +1,31 @@
+footer.is-open {
+  height: 100%;
+}
+
+.logged-in footer.is-open {
+  height: calc( 100% - 32px );
+}
+
 footer {
   position: fixed;
   width: 100%;
   left: 0;
   z-index: 90;
-  transition: all .5s;
-  max-height: 138px;
+  height: 138px;
   bottom: 0;
+  border-top: 1px solid var(--colorHeaders);
+  background-color: var(--colorLight);
+  transition: all .3s;
 
   #contact-form {
     left: 0;
     bottom: 0;
-    transform: translate3d(0, 100%, 0);
-    transition: all .6s;
+    /* transform: translate3d(0, 100%, 0); */
+    transition: all .3s;
 
-    &.is-open {
+    /* &.is-open {
       transform: translate3d(0, 0, 0);
-    }
+    } */
   }
 
   .contact-form_wrapper {
@@ -29,7 +39,7 @@ footer {
       input {
         padding: 20px 24px;
         background-color: transparent;
-        border: 1px solid theme(colors[headers]);
+        border: 1px solid var(--colorHeaders);
         border-radius: 0;
         height: 61px;
       }
@@ -37,7 +47,7 @@ footer {
       textarea {
         padding: 20px 24px;
         background-color: transparent;
-        border: 1px solid theme(colors[headers]);
+        border: 1px solid var(--colorHeaders);
         border-radius: 0;
         height: 178px;
       }
@@ -48,7 +58,7 @@ footer {
       height: 257px;
       border-radius: 100%;
       background: var(--colorAccent);
-      color: theme(colors[white]);
+      color: var(--colorwhite);
       position: absolute;
       right: 0;
       top: -288px;
@@ -57,12 +67,12 @@ footer {
 
       &:not(:hover):not(:active) {
         background: var(--colorAccent);
-        color: theme(colors[white]);
+        color: var(--colorwhite);
       }
 
       &:hover,
       &:active {
-        background: theme(colors[light]);
+        background: var(--colorLight);
         color: var(--colorAccent);
       }
 
@@ -72,13 +82,51 @@ footer {
     }
 
   }
-}
+  #color-toggle {
+    position: relative;
 
+    .icon {
+      margin-right: 12px;
+      height: 32px;
+      width: 32px;
+      margin-top: -6px;
+      transition: all .3s;
+    }
+
+    .inner-icon-wrapper {
+      transition: all .3s;
+    }
+
+    &.dark-mode {
+      .inner-icon-wrapper {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover .icon {
+      animation: wiggle .3s 1;
+    }
+  }
+}
+@keyframes wiggle {
+  0% {
+     transform: rotate(0deg); 
+    }
+  25% {
+    transform: rotate(-10deg);
+    }
+  75% {
+     transform: rotate(10deg);
+     }
+ 100% {
+   transform: rotate(0deg); 
+  }
+}
 .btn-ghost {
   padding: 20px;
   min-width: 258px;
   font-weight: 700;
-  border: 1px solid theme(colors[dark]);
+  border: 1px solid var(--colorDark);
   border-radius: 94px;
   transition: all .3s;
 }
@@ -87,6 +135,6 @@ footer {
   .btn-ghost {
     border-color: var(--colorAccent);
     background-color: var(--colorAccent);
-    color: theme(colors[white]);
+    color: var(--colorWhite);
   }
 }

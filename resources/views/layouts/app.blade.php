@@ -4,7 +4,7 @@
 
 @include('sections.header')
 
-  <main id="main" class="main">
+  <main id="main" class="main transition-fade">
     {{-- @yield('content') --}}
     @if( have_rows('components') )
       @while( have_rows('components') )

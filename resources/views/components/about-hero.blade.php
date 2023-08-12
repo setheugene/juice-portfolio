@@ -1,3 +1,13 @@
+@php
+  $revealOne = '';
+  $revealOne = ['js-reveal-left', 'js-reveal-top', 'js-reveal-bottom'];
+  $selectedRevealOne = array_rand($revealOne, 1);
+  $revealOne = $revealOne[$selectedRevealOne];
+  $revealTwo = '';
+  $revealTwo = ['js-reveal-left', 'js-reveal-top', 'js-reveal-bottom'];
+  $selectedRevealTwo = array_rand($revealTwo, 1);
+  $revealTwo = $revealTwo[$selectedRevealTwo];
+@endphp
 <section class="about-hero pt-12 lg:pt-20 pb-24 lg:pb-32">
   <div class="container">
     <div class="row">
@@ -20,7 +30,7 @@
         </div>
         <?php $leftImage = get_sub_field('about_hero_left_image');
         if( !empty( $leftImage ) ) : ?>
-          <div class="relative about-hero_left-image hidden lg:block">
+          <div class="<?php echo $revealOne; ?> relative about-hero_left-image hidden lg:block">
             <div class="fit-image">
               <img class="" src="<?php echo esc_url($leftImage['url']); ?>" alt="<?php echo esc_attr($leftImage['alt']); ?>" />
             </div>
@@ -39,7 +49,7 @@
         </div>
         <?php $rightImage = get_sub_field('about_hero_right_image');
         if( !empty( $rightImage ) ) : ?>
-          <div class="relative about-hero_right-image mb-12">
+          <div class="relative about-hero_right-image mb-12 <?php echo $revealTwo; ?>">
             <div class="fit-image">
               <img class="overlapping-gallery_right-image" src="<?php echo esc_url($rightImage['url']); ?>" alt="<?php echo esc_attr($rightImage['alt']); ?>" />
             </div>

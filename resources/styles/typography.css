@@ -126,7 +126,7 @@ h6,
   -webkit-background-clip: text;
   color: #FFFFFF;
   animation: filling 3s ease forwards;
-  -webkit-text-stroke: 1px theme(colors[dark]);
+  -webkit-text-stroke: 1px var(--colorDark);
 }
 
 .animated-outline {

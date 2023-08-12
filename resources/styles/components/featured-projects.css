@@ -14,14 +14,17 @@
     pointer-events: none;
     height: 25vh;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(250, 242, 234, 0.00) 0%, #FAF2EA 100%);
+    transition: all .3s;
+    background: linear-gradient(180deg, rgba(250, 242, 234, 0.00) 0%, var(--colorLight) 100%);
   }
-
+  .featured-projects_pinned {
+    background-color: var(--colorLight);
+  }
   .featured-projects_pinned::before {
     content: "";
     top: -80px;
     width: 100%;
-    background-color: theme(colors[light]);
+    background-color: var(--colorLight);
     left: 0;
     height: 80px;
     position: absolute;
@@ -49,45 +52,45 @@
 .magnetic-wrap {
   &:hover .featured-project_category-pill {
     background-color: var(--colorAccent);
-    color: theme(colors[light]);
+    color: var(--colorLight);
     border-color: var(--colorAccent);
   }
 
   &.is-open .featured-project_category-pill {
     color: var(--colorAccent);
-    border: 1px solid theme(colors[dark]);
-    background-color: theme(colors[light]);
-
+    border: 1px solid var(--colorDark);
+    background-color: var(--colorLight);
   }
 
   &.is-open:hover .featured-project_category-pill {
     background-color: var(--colorAccent);
-    color: theme(colors[light]);
+    color: var(--colorLight);
     border-color: var(--colorAccent);
   }
 
 
   &:hover .featured-project_btn {
     background-color: var(--colorAccent);
-    color: theme(colors[white]);
+    color: var(--colorWhite);
     border-color: var(--colorAccent);
 
     svg {
-      stroke: theme(colors[white]);
+      stroke: var(--colorwhite);
     }
   }
 }
 
 .featured-project_category-pill {
   padding: 10px 18px 8px;
-  border: 1px solid theme(colors[dark]);
+  border: 1px solid var(--colorDark);
+  color: var(--colorDark);
   font-size: 16px;
   font-family: League Spartan;
   font-weight: 700;
   line-height: 100%;
   text-transform: capitalize;
   border-radius: 20px;
-  transition: all .2s;
+  transition: all .3s;
   cursor: pointer;
 }
 
@@ -106,7 +109,7 @@
     content: "";
     height: 6px;
     width: 6px;
-    border: 1px solid theme(colors[dark]);
+    border: 1px solid var(--colorDark);
     top: 6px;
     position: absolute;
     right: -28px;
@@ -148,12 +151,13 @@
     justify-content: space-between;
     font-weight: 700;
     border-radius: 94px;
-    border: 1px solid theme(colors[headers]);
-    transition: all .2s;
+    border: 1px solid var(--colorHeaders);
+    transition: all .3s;
+    color: var(--colorHeaders);
 
     svg {
       stroke: var(--colorAccent);
-      transition: all .2s;
+      transition: all .3s;
     }
   }
 }

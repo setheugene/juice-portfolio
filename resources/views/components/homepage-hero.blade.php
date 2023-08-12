@@ -19,6 +19,9 @@
       </div>
       <div class="col w-full md:w-1/2">
         <div class="square relative">
+          <div class="homepage-hero_headshot">
+            <img class="" src="<?php echo esc_url(get_sub_field('homepage_hero_headshot')['url']); ?>" alt="<?php echo esc_attr(get_sub_field('homepage_hero_headshot')['alt']); ?>" />
+          </div>
           <?php 
           $bottom_link = get_sub_field('homepage_hero_bottom_button');
           if( $bottom_link ): 

@@ -1,4 +1,4 @@
-<header class="border-b border-headers py-5">
+<header class="py-5">
   <div class="container">
     <div class="row justify-between items-center">
       <div class="col w-1/4">
