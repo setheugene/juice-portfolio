@@ -102,6 +102,12 @@ h6,
   line-height: 142%;
 }
 
+.paragraph-extra-small {
+  font-family: theme(fontFamily[sans]);
+  font-size: 12px;
+  line-height: 142%;
+}
+
 @keyframes filling {
   from {
     background-position: center 0;

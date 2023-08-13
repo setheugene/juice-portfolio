@@ -15,9 +15,10 @@
   </head>
 
   <body <?php body_class(); ?>>
+    
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
-    <!-- <div style="background-color: black; z-index: 1000; pointer-events: none;" class="loading-overlay absolute inset-0 h-full w-full bg-black duration-500"></div> -->
+    <?php include_once( 'resources/images/symbol-defs.svg' ); ?>
     <div id="app">
       <?php echo view(app('sage.view'), app('sage.data'))->render(); ?>
     </div>

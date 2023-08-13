@@ -294,12 +294,22 @@ add_filter( 'tiny_mce_before_init', function( $settings ) {
 		[
 			'title'	=> __( 'Heading Styles', 'text_domain' ),
 			'items'	=> [
-        [ 'title' => 'Heading One', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
-        [ 'title' => 'Heading Two', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
-        [ 'title' => 'Heading Three', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
-        [ 'title' => 'Heading Four', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
-        [ 'title' => 'Heading Five', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
-        [ 'title' => 'Heading Six', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
+        [ 'title' => 'Heading Hero - 80px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-hero', 'exact' => '1' ],
+        [ 'title' => 'Heading One - 64px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
+        [ 'title' => 'Heading Two - 48px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
+        [ 'title' => 'Heading Three - 40px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
+        [ 'title' => 'Heading Four - 32px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
+        [ 'title' => 'Heading Five - 24px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
+        [ 'title' => 'Heading Six - 16px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
+			],
+		],
+    [
+			'title'	=> __( 'Body Text Styles', 'text_domain' ),
+			'items'	=> [
+        [ 'title' => 'Large Body - 18px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-large', 'exact' => '1' ],
+        [ 'title' => 'Regular Body - 16px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-default', 'exact' => '1' ],
+        [ 'title' => 'Small Body - 14px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-small', 'exact' => '1' ],
+        [ 'title' => 'Extra Small Body - 12px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-extra-small', 'exact' => '1' ],
 			],
 		],
     [
@@ -400,7 +410,120 @@ function ll_acf_admin_footer() {
 }
 add_action('acf/input/admin_footer', 'll_acf_admin_footer');
 
-function my_theme_add_editor_styles() {
-  add_editor_style( 'resources/styles/typography.css' );
+function add_editor_styles() {
+  add_editor_style( 'resources/styles/editor.css' );
 }
-add_action( 'init', 'my_theme_add_editor_styles' );
+add_action( 'init', 'add_editor_styles' );
+
+
+add_action('admin_head', 'my_custom_fonts');
+function my_custom_fonts() {
+  echo '<style>
+  .acf-icon-grid .acf-button-group {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 54px));
+  }
+  
+  .acf-icon-grid .acf-button-group label {
+    border-radius: 0 !important;
+  }
+  
+  .acf-icon-grid .acf-button-group label svg {
+    width: 32px;
+    height: 32px;
+    max-width: 100%;
+  }
+  </style>';
+}
+
+
+add_action( 'in_admin_header','ll_in_admin_header' );
+function ll_in_admin_header() {
+  include_once( get_stylesheet_directory() . '/resources/images/symbol-defs.svg' );
+}
+
+/*
+ * Generates an array of sanitized ids from the definitions in symbol-defs.svg.
+ * @params $file defaults to symbol-defs.svg, can be changed for functional use in other situtations
+ */
+function get_icon_list( $file='symbol-defs.svg' ) {
+  $file_path = get_template_directory_uri() . '/resources/images/'.$file;
+  $icon_data = simplexml_load_string( file_get_contents( $file_path,false, stream_context_create( array("ssl"=>array("verify_peer"=>false,"verify_peer_name"=>false))) ) );
+
+  if ( $icon_data ) {
+    $icon_list = $icon_data->defs;
+    if ( $icon_list ) {
+      $icon_list = (array) $icon_list;
+      if ( is_object( $icon_list['symbol'] ) ) {
+        $icon_list['symbol'] = [$icon_list['symbol']];
+      }
+    }
+  }
+
+  $icons = array();
+  if ( $icon_list ) {
+    foreach( $icon_list['symbol'] as $icon_key => $icon ) {
+      if ( isset( $icon['id'] ) ) {
+        $icons[] = (string) substr($icon['id'], 5);
+      }
+    }
+  }
+  sort($icons);
+  return $icons;
+}
+
+// Output visual icon selector
+// Usage: Field Name: my_component_name, Field Type: clone, Prefix Field Names: yes
+// Call my_component_name_svg_icon
+/*
+ * Populate ACF Button Group field with symbol-defs.svg
+ */
+add_filter('acf/load_field/type=button_group', 'll_icon_picker', 99);
+function ll_icon_picker($field) {
+  global $post;
+  if ( !is_admin() || !function_exists('get_icon_list') ) {
+    return $field;
+  }
+
+  if ( strpos( $field['name'], 'svg_icon' ) !== false ) {
+
+    //empty out choices just in case
+    $field['choices'] = array();
+
+    $icons = get_icon_list();
+
+    if ( $icons ) {
+      foreach ($icons as $key => $icon) {
+        $field['choices'][$icon] = '<svg class="icon icon-'.$icon.'" aria-hidden="true"><use xlink:href="#icon-'.$icon.'"></use></svg>';
+      };
+    }
+  }
+  return $field;
+}
+
+/* Allow svg and other associated tags and attributes
+ * so our svg icon selector displays properly
+*/
+add_filter( 'wp_kses_allowed_html', 'acf_add_allowed_svg_tag', 10, 2 );
+function acf_add_allowed_svg_tag( $tags, $context ) {
+    if ( $context === 'acf' ) {
+        $tags['svg']  = array(
+            'xmlns'       => true,
+            'fill'        => true,
+            'viewbox'     => true,
+            'role'        => true,
+            'aria-hidden' => true,
+            'focusable'   => true,
+            'class' => true,
+        );
+        $tags['path'] = array(
+            'd'    => true,
+            'fill' => true,
+        );
+        $tags['use'] = array(
+          'xlink:href' => true,
+        );
+    }
+
+    return $tags;
+}
