@@ -1,6 +1,6 @@
 <footer id="footer" class="transition-drop">
   <div id="contact-trigger-wrapper" class="flex z-50 items-center justify-around py-[28px]">
-    <button id="color-toggle" class="flex items-center" data-toggle-class="dark-mode" data-toggle-target="body">
+    <button id="color-toggle" class="flex items-center">
       <div class="icon">
         <div class="inner-icon-wrapper">
           <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
       </div>
     </button>
   </div>
-  <div id="contact-form" class="border-t border-brand-dark w-full">
+  <div id="contact-form" class="w-full">
     <div class="container">
       <div class="row">
         <div class="col w-full">

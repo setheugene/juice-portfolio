@@ -42,7 +42,7 @@
           <?php if( get_sub_field('about_hero_icons') != ''): ?>
             <?php foreach(get_sub_field('about_hero_icons') as $icon) : ?>
               <div class="about-hero_icon-wrapper">
-                <img class="about-hero_icon" src="<?php echo esc_url($icon['icon']['url']); ?>" alt="<?php echo esc_attr($icon['icon']['alt']); ?>" />
+                <svg class="icon about-hero_icon text-color-accent icon-<?php echo $icon['svg_icon'] ?>"><use xlink:href="#icon-<?php echo $icon['svg_icon'] ?>"></use></svg>
               </div>
             <?php endforeach; ?>
           <?php endif; ?>

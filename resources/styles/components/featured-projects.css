@@ -75,7 +75,7 @@
     border-color: var(--colorAccent);
 
     svg {
-      stroke: var(--colorwhite);
+      stroke: var(--colorWhite);
     }
   }
 }

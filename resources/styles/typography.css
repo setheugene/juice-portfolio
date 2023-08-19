@@ -68,12 +68,13 @@ h5,
 
 h6,
 .hdg-6 {
-  font-family: theme(fontFamily[serif]);
+  font-family: theme(fontFamily[sans]);
   font-weight: 700;
   font-size: 14px;
   line-height: 132%;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-bottom: 24px;
 
   @screen md {
     font-size: 16px;
@@ -150,4 +151,12 @@ h6,
   background-clip: text;
   -webkit-background-clip: text;
   overflow: hidden;
+}
+
+.font-league-spartan {
+  font-family: theme(fontFamily[sans]);
+}
+
+.font-comorant {
+  font-family: theme(fontFamily[serif]);
 }

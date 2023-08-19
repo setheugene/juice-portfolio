@@ -281,6 +281,43 @@ if( function_exists('acf_add_options_page') ) {
 
 //  add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );  
 
+/**
+ * Action that fires immediately before the submit button element is displayed.
+ * 
+ * @link  https://wpforms.com/developers/wpforms_display_submit_before/
+ * 
+ * @param array  $form_data Form data and settings
+ */
+ 
+//  function wpf_dev_display_submit_before( $form_data ) {
+  
+//   if ( absint( $form_data[ 'id' ] ) !== 45 ) {
+//         return;
+//     } 
+       
+//   _e( '<div class="magnetic-wrap"><div class="js-magnetic-area magnetic-size"></div><div class="js-magnetic-content">', 'plugin-domain' );
+
+// }
+// add_action( 'wpforms_display_submit_before', 'wpf_dev_display_submit_before', 10, 1 );
+
+// /**
+//  * Action that fires just after the submit button element is displayed.
+//  * 
+//  * @link  https://wpforms.com/developers/wpforms_display_submit_after/
+//  * 
+//  * @param array  $form_data Form data and settings
+//  */
+ 
+//  function wpf_dev_display_submit_after( $form_data ) {
+  
+//   if ( absint( $form_data[ 'id' ] ) !== 45 ) {
+//           return;
+//       } 
+       
+//   _e( '</div></div>', 'plugin-domain' );
+
+// }
+// add_action( 'wpforms_display_submit_after', 'wpf_dev_display_submit_after', 10, 1 );
 
  
 /////////////////////////////////////////////////////////////////////////
@@ -291,43 +328,50 @@ add_filter( 'mce_buttons', function( $buttons ) {
 
 add_filter( 'tiny_mce_before_init', function( $settings ) {
 	$new_styles = [
-		[
+    [
+			'title'	=> __( 'Fonts', 'text_domain' ),
+			'items'	=> [
+        [ 'title' => 'League Spartan', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'font-league-spartan', 'exact' => '1' ],
+        [ 'title' => 'Comorant', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'font-comorant', 'exact' => '1' ],
+			],
+		],
+    [
 			'title'	=> __( 'Heading Styles', 'text_domain' ),
 			'items'	=> [
-        [ 'title' => 'Heading Hero - 80px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-hero', 'exact' => '1' ],
-        [ 'title' => 'Heading One - 64px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
-        [ 'title' => 'Heading Two - 48px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
-        [ 'title' => 'Heading Three - 40px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
-        [ 'title' => 'Heading Four - 32px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
-        [ 'title' => 'Heading Five - 24px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
-        [ 'title' => 'Heading Six - 16px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
+        [ 'title' => 'Heading Hero - 80px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-hero', 'exact' => '1' ],
+        [ 'title' => 'Heading One - 64px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-1', 'exact' => '1' ],
+        [ 'title' => 'Heading Two - 48px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-2', 'exact' => '1' ],
+        [ 'title' => 'Heading Three - 40px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-3', 'exact' => '1' ],
+        [ 'title' => 'Heading Four - 32px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-4', 'exact' => '1' ],
+        [ 'title' => 'Heading Five - 24px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-5', 'exact' => '1' ],
+        [ 'title' => 'Heading Six - 16px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'hdg-6', 'exact' => '1' ],
 			],
 		],
     [
 			'title'	=> __( 'Body Text Styles', 'text_domain' ),
 			'items'	=> [
-        [ 'title' => 'Large Body - 18px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-large', 'exact' => '1' ],
-        [ 'title' => 'Regular Body - 16px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-default', 'exact' => '1' ],
-        [ 'title' => 'Small Body - 14px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-small', 'exact' => '1' ],
-        [ 'title' => 'Extra Small Body - 12px', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-extra-small', 'exact' => '1' ],
+        [ 'title' => 'Large Body - 18px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-large', 'exact' => '1' ],
+        [ 'title' => 'Regular Body - 16px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-default', 'exact' => '1' ],
+        [ 'title' => 'Small Body - 14px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-small', 'exact' => '1' ],
+        [ 'title' => 'Extra Small Body - 12px', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'paragraph-extra-small', 'exact' => '1' ],
 			],
 		],
     [
 			'title'	=> __( 'Colors', 'text_domain' ),
 			'items'	=> [
-        [ 'title' => 'Headers', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-headers', 'exact' => '1' ],
-        [ 'title' => 'Dark', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-dark', 'exact' => '1' ],
-        [ 'title' => 'Light', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-light', 'exact' => '1' ],
-        [ 'title' => 'White', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-white', 'exact' => '1' ],
-        [ 'title' => 'Accent', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-accent', 'exact' => '1' ],
+        [ 'title' => 'Headers', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-headers', 'exact' => '1' ],
+        [ 'title' => 'Dark', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-dark', 'exact' => '1' ],
+        [ 'title' => 'Light', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-light', 'exact' => '1' ],
+        [ 'title' => 'White', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-white', 'exact' => '1' ],
+        [ 'title' => 'Accent', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'text-color-accent', 'exact' => '1' ],
 			],
 		],
     [
 			'title'	=> __( 'Buttons', 'text_domain' ),
 			'items'	=> [
-        [ 'title' => 'Dark Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'bnt-dark', 'exact' => '1' ],
-        [ 'title' => 'Light Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-light', 'exact' => '1' ],
-        [ 'title' => 'Arrow Button', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-arrow', 'exact' => '1' ],
+        [ 'title' => 'Dark Button', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'bnt-dark', 'exact' => '1' ],
+        [ 'title' => 'Light Button', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-light', 'exact' => '1' ],
+        [ 'title' => 'Arrow Button', 'wrapper'  => false, 'inline'   => 'span', 'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6', 'classes' => 'btn-arrow', 'exact' => '1' ],
 			],
 		],
 	];

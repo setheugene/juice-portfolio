@@ -51,6 +51,9 @@
         @if(get_row_layout() == 'appearing_text') 
           @include('components.appearing-text')
         @endif
+        @if(get_row_layout() == 'references') 
+        @include('components.references')
+      @endif
       @endwhile
     @endif
   </main>

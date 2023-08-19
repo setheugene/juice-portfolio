@@ -111,22 +111,22 @@ function init() {
 
   // $('.loading-overlay').addClass('loaded');
 
-  // $('.video-popup-trigger').magnificPopup({
-  //   type: 'iframe',
-  //   mainClass: 'mfp-fade',
-  //   preloader: false,
-  //   fixedContentPos: false,
-  //   removalDelay: 160,
-  //   callbacks: {
-  //     open: function () {
-  //       console.log('open');
-  //       $('video').trigger('pause');
-  //     },
-  //     close: function () {
-  //       $('video').trigger('play');
-  //     },
-  //   },
-  // });
+  $('.video-popup-trigger').magnificPopup({
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    preloader: false,
+    fixedContentPos: false,
+    removalDelay: 160,
+    callbacks: {
+      open: function () {
+        console.log('open');
+        $('video').trigger('pause');
+      },
+      close: function () {
+        $('video').trigger('play');
+      },
+    },
+  });
 
   if ($('.appearing-text').length > 0) {
 
@@ -185,6 +185,32 @@ function init() {
     }
   }
 
+  function switchColorMode() {
+    if (sessionStorage.getItem('colorMode') === 'dark') {
+      sessionStorage.setItem('colorMode', 'dark');
+      $('body').addClass('dark-mode');
+    } else {
+      sessionStorage.setItem('colorMode', 'light');
+      $('body').removeClass('dark-mode');
+    }
+  }
+
+  switchColorMode();
+
+  $('#color-toggle').on('click', function () {
+    $(this).toggleClass('dark-mode');
+    if (sessionStorage.getItem('colorMode') === 'dark') {
+      sessionStorage.setItem('colorMode', 'light');
+      $('body').removeClass('dark-mode');
+    } else {
+      sessionStorage.setItem('colorMode', 'dark');
+      $('body').addClass('dark-mode');
+    }
+  });
+
+  $('#submit-contact-form').on('click', function () {
+    $('#wpforms-submit').click();
+  })
 
   window.toggleGridOverlay = function () {
     const template = `<div id="gridOverlay" class="fixed inset-0 opacity-25 pointer-events-none" style="z-index:9999">
@@ -283,24 +309,6 @@ function init() {
     });
   }
 
-  // const formHeight = '-' + $('#contact-form').innerHeight() + 'px';
-  // $('footer').css('bottom', formHeight);
-
-  // $('.feature-projects_gradient-overlay').css('bottom', '117px');
-
-  // document.querySelector("#form-trigger").addEventListener("toggleAfter", event => {
-  //   const formHeight = '-' + $('#contact-form').innerHeight() + 'px';
-  //   const overlayBottom = ($('#contact-form').innerHeight() + 117) + 'px';
-  //   console.log(formHeight);
-  //   console.log(overlayBottom);
-  //   if (window.easyToggleState.isActive(event.target)) {
-  //     $('footer').css('bottom', '0');
-  //     $('.feature-projects_gradient-overlay').css('bottom', overlayBottom);
-  //   } else {
-  //     $('footer').css('bottom', formHeight);
-  //     $('.feature-projects_gradient-overlay').css('bottom', '117px');
-  //   }
-  // }, false);
 
   parallax();
 
