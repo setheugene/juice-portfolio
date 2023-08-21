@@ -30,7 +30,7 @@
             <div class="row justify-center">
               <div class="col w-full lg:w-10/12">
                 <div class="row">
-                  <div class="col w-full md:w-[70%]">
+                  <div class="col w-full md:w-[70%] js-fade">
                     <div class="wysiwyg">
                       <?= the_field('footer_content','option') ?? ''; ?>
                     </div>

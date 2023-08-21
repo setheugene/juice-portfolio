@@ -22,7 +22,7 @@ $projects = get_posts($args);
         <div class="flex items-center justify-end">
           <?php $categories = get_categories(['taxonomy' => 'projects_category', 'hide_empty' => true]); ?>
           <?php foreach( $categories as $key => $category ) : ?>
-            <button class="w-fit mr-10 last:mr-0 magnetic-wrap" data-toggle-radio-group="project-filter" data-toggle-class="is-open" data-toggle-target=".<?= $category->slug; ?>" <?= $key === 0 ? 'data-toggle-is-active' : ''; ?>>
+            <button class="w-fit mr-10 last:mr-0 magnetic-wrap featured-project_cat-filter-trigger <?= $key === 0 ? 'is-open' : ''; ?>" data-radio-group="project-filter" data-target=".<?= $category->slug; ?>">
               <div class="js-magnetic-area magnetic-size"></div>
               <div class="js-magnetic-content">
                 <div class="featured-project_category-pill">
@@ -38,7 +38,7 @@ $projects = get_posts($args);
     
     <?php if( !empty($projects) ) : ?>
       <div class="featured-projects_grid">
-        <?php foreach( $projects as $project ) :
+        <?php foreach( $projects as $key => $project ) :
           $project_categories = get_the_terms($project->ID, 'projects_category');
           
           $project_classes = '';
@@ -48,7 +48,7 @@ $projects = get_posts($args);
             endforeach;
           endif;
         ?>
-          <div class="row featured-project_project relative pt-11 <?= $project_classes; ?>">
+          <div class="row featured-project_project relative pt-11 <?= $project_classes; ?> <?php echo str_contains($project_classes, $categories[0]->slug) ? 'is-open' : ''; ?>">
             <div class="col left">
               <div class="project-image relative">
                 <?= get_the_post_thumbnail($project->ID, 'large'); ?>

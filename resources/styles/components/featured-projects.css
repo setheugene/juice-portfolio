@@ -49,7 +49,7 @@
   }
 }
 
-.magnetic-wrap {
+.featured-project_cat-filter-trigger {
   &:hover .featured-project_category-pill {
     background-color: var(--colorAccent);
     color: var(--colorLight);
@@ -57,9 +57,13 @@
   }
 
   &.is-open .featured-project_category-pill {
-    color: var(--colorAccent);
+    /* color: var(--colorAccent);
     border: 1px solid var(--colorDark);
-    background-color: var(--colorLight);
+    background-color: var(--colorLight); */
+
+    background-color: var(--colorAccent);
+    color: var(--colorLight);
+    border-color: var(--colorAccent);
   }
 
   &.is-open:hover .featured-project_category-pill {

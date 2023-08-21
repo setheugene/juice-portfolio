@@ -60,7 +60,7 @@
   </div>
   <div class="container lg:-mt-14 mt-10">
     <div class="row justify-end">
-      <div class="w-full col lg:w-5/12">
+      <div class="w-full col lg:w-5/12 js-fade">
         <div class="wysiwyg">
           <?= get_sub_field('overlapping_gallery_content') ?? ''; ?>
         </div>

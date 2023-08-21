@@ -17,7 +17,7 @@
           </div>
         <?php endif; ?>
       </div>
-      <div class="col w-full md:w-1/2 order-2 <?= get_sub_field('left_right_layout') === 'image-content' ? 'md:order-1' : 'md:order-2'; ?>">
+      <div class="col w-full js-fade md:w-1/2 order-2 <?= get_sub_field('left_right_layout') === 'image-content' ? 'md:order-1' : 'md:order-2'; ?>">
         <div class="wysiwyg">
           <?= get_sub_field('left_right_content') ?? ''; ?>
         </div>

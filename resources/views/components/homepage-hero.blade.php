@@ -1,14 +1,14 @@
 <section class="homepage-hero pb-10 relative z-20">
   <div class="container lg:pt-20 pt-12">
     <div class="row">
-      <div class="col w-full md:w-1/2">
+      <div class="col w-full md:w-1/2 z-10">
         <?php if( !empty(get_sub_field('homepage_hero_headings'))) : ?>
           <?php foreach( get_sub_field('homepage_hero_headings') as $heading ) : ?>
           <div class="flex items-center mb-[48px] last:mb-0">
             <?php 
-            $image = $heading['icon'];
-            if( !empty( $image ) ): ?>
-                <img class="homepage-hero_icon" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            $icon = $heading['icon_svg_icon'];
+            if( !empty( $icon ) ): ?>
+                <svg class="icon h-10 w-10 homepage-hero__icons mr-4 icon-<?php echo $icon; ?>"><use xlink:href="#icon-<?php echo $icon; ?>"></use></svg>
             <?php endif; ?>
             <h2 class="headings text-color-headers text-8xl">
               <?php echo $heading['heading']; ?>

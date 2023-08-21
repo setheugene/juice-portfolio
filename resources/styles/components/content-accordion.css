@@ -1,7 +1,29 @@
 .content-accordion_content {
   padding: 0 18px;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: all 0.3s ease-out;
   border-bottom: 1px solid var(--colorHeaders);
+  overflow: hidden;
+  pointer-events: none;
+
+  .content-accordion_content-inner {
+    opacity: 0;
+    transition: all .3s ease-out;
+  }
+
+  .vertical {
+    height: 100%;
+  }
+
+  &.is-open {
+    pointer-events: auto;
+
+    .vertical {
+      height: 0;
+    }
+
+    .content-accordion_content-inner {
+      opacity: 1;
+    }
+  }
 }

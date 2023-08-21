@@ -1,10 +1,8 @@
 .homepage-hero {
   border-bottom: 3px solid var(--colorAccent);
 
-  .homepage-hero_icon {
-    width: 35px;
-    height: 35px;
-    margin-right: 18px;
+  .homepage-hero__icons {
+    fill: var(--colorAccent);
   }
 
   .square {

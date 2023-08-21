@@ -169,7 +169,7 @@ main {
 
 .vertical {
   display: inline-block;
-  background-color: theme(colors[headers]);
+  background-color: var(--colorHeaders);
   position: absolute;
   width: 1px;
   height: 20px;
@@ -179,7 +179,8 @@ main {
   transition: all .5s ease-in;
 }
 
-.active .vertical {
+.active .vertical,
+.is-open .vertical {
   height: 0;
 }
 

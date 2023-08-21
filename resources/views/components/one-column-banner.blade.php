@@ -4,7 +4,7 @@
       <div class="col w-full lg:w-10/12">
         <div class="one-column-banner_content-wrapper relative">
           <div class="row justify-center">
-            <div class="col w-4/5">
+            <div class="col w-4/5 js-fade">
               <h3 class="text-color-dark text-center hdg-3 mb-6">
                 <?php echo get_sub_field('one_column_banner_heading') ?? ''; ?>
               </h3>
