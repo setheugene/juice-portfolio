@@ -57,10 +57,6 @@
   }
 
   &.is-open .featured-project_category-pill {
-    /* color: var(--colorAccent);
-    border: 1px solid var(--colorDark);
-    background-color: var(--colorLight); */
-
     background-color: var(--colorAccent);
     color: var(--colorLight);
     border-color: var(--colorAccent);
@@ -122,15 +118,35 @@
 }
 
 .featured-project_project {
-  margin-bottom: 113px;
+  margin-bottom: 32px;
   width: 100%;
+  border-bottom: 1px solid var(--colorDark);
+  padding-bottom: 42px;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  @screen lg {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 113px;
+  }
 
   .left.col {
-    width: 30.333%;
+    width: 100%;
+
+    @screen lg {
+      width: 30.333%;
+    }
   }
 
   .right.col {
-    width: 69.333%;
+    width: 100%;
+
+    @screen lg {
+      width: 69.333%;
+    }
   }
 
   .project-image {

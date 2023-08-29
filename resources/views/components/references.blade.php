@@ -20,7 +20,10 @@
                 <a class="magnetic-wrap circle" href="<?php echo esc_url( $circle_link_url ); ?>" target="<?php echo esc_attr( $circle_link_target ); ?>">
                   <div class="js-magnetic-area magnetic-size"></div>
                   <div class="js-magnetic-content">
-                    <div class="round-button right"><?php echo esc_html( $circle_link_title ); ?></div>
+                    <div class="round-button right flex justify-center items-center flex-col">
+                      <svg class="icon icon-arrow h-10 w-10 mb-2"><use xlink:href="#icon-arrow"></use></svg>
+                      <?php echo esc_html( $circle_link_title ); ?>
+                    </div>
                   </div>
                 </a>
             <?php endif; ?>
@@ -86,7 +89,7 @@
 
             </div>
 
-           {{-- <lottie-player src="<?php //echo get_template_directory_uri(); ?>/resources/lottie/Page_Transition.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player> --}}
+           {{-- <lottie-player src="<?php //echo get_template_directory_uri(); ?>/resources/lottie/hero-bg.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player> --}}
           </div>
         </div>
       </div>

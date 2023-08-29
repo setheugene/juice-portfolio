@@ -13,13 +13,13 @@ $projects = get_posts($args);
     <div class="row items-end pt-11 duration-300 featured-projects_pinned before:duration-300 z-50 relative">
       <div class="col w-full md:w-1/2">
         <?php if( !empty(get_sub_field('featured_projects_heading'))) : ?>
-          <h2 class="hdg-hero text-color-accent">
+          <h2 class="hdg-hero text-color-accent text-center lg:text-left">
             <?= get_sub_field('featured_projects_heading'); ?>
           </h2>
         <?php endif; ?>
       </div>
       <div class="col w-full md:w-1/2">
-        <div class="flex items-center justify-end">
+        <div class="flex items-center justify-center lg:justify-end">
           <?php $categories = get_categories(['taxonomy' => 'projects_category', 'hide_empty' => true]); ?>
           <?php foreach( $categories as $key => $category ) : ?>
             <button class="w-fit mr-10 last:mr-0 magnetic-wrap featured-project_cat-filter-trigger <?= $key === 0 ? 'is-open' : ''; ?>" data-radio-group="project-filter" data-target=".<?= $category->slug; ?>">
@@ -33,11 +33,11 @@ $projects = get_posts($args);
           <?php endforeach; ?>
         </div>
       </div>
-      <hr class="mt-11 ml-4 mr-2 border-dark col w-full">
+      <hr class="mt-4 lg:mt-11 ml-4 mr-2 border-dark col w-full">
     </div>
     
     <?php if( !empty($projects) ) : ?>
-      <div class="featured-projects_grid">
+      <div class="featured-projects_grid flex flex-col items-center">
         <?php foreach( $projects as $key => $project ) :
           $project_categories = get_the_terms($project->ID, 'projects_category');
           
@@ -54,7 +54,7 @@ $projects = get_posts($args);
                 <?= get_the_post_thumbnail($project->ID, 'large'); ?>
               </div>
             </div>
-            <div class="col right">
+            <div class="col right flex flex-col lg:flex-row mt-6 lg:mt-0">
               <?php $project_tags = get_the_tags($project->ID); ?>
               <?php if( !empty( $project_tags ) ) : ?>
                 <div class="ml-4 flex items-center mb-8">
@@ -68,7 +68,7 @@ $projects = get_posts($args);
               <div class="ml-4 hdg-1 text-color-headers">
                 <?= get_the_title( $project->ID ); ?>
               </div>
-              <a href="<?= get_permalink( $project->ID ); ?>" class="absolute inline-block bottom-0 right-0 magnetic-wrap">
+              <a href="<?= get_permalink( $project->ID ); ?>" class="lg:absolute mt-8 lg:mt-0 w-fit inline-block bottom-0 right-0 magnetic-wrap">
                 <div class="js-magnetic-area magnetic-size"></div>
                 <div class="js-magnetic-content">
                   <div class="featured-project_btn">
