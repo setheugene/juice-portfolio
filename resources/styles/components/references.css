@@ -1,0 +1,200 @@
+section.references {
+  .icon {
+    fill: var(--colorWhite);
+  }
+  #spotify-popup {
+    position: absolute;
+    top: -140px;
+    right: -240px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.5) translate3D(-100%, 100%);
+    transition: all .25s;
+
+    transform-style: preserve-3d;
+    perspective: 2000px;
+
+    &.is-open {
+      pointer-events: auto;
+      opacity: 1;
+      transform: scale(1) translate3D(0, 0);
+    }
+  }
+  .spotify-close {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    background-color: var(--colorAccent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -13px;
+    right: -13px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+      fill: var(--colorWhite);
+    }
+  }
+
+  .circle-container {
+    width: 430px;
+    height: 430px;
+    border-radius: 430px;
+    border: 3px dashed var(--colorAccent);
+    background: var(--colorLight);
+
+    .references_large-floating-asset {
+      width: 773px;
+      position: absolute;
+      right: -218px;
+      top: -162px;
+      animation: floatTwo 15s ease-in-out infinite;
+    }
+
+    .references_small-floating-asset {
+      width: 118px;
+      height: 118px;
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      animation: floatOne 20s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    .references_top-right-float {
+      position: absolute;
+      right: -87px;
+      top: 108px;
+      animation: floatThree 10s ease-out infinite;
+    }
+    .references_bottom-right-float {
+      position: absolute;
+      bottom: -35px;
+      right: 24px;
+      animation: floatOne 30s ease-in-out infinite;
+    }
+    .references_bottom-left-float {
+      position: absolute;
+      bottom: 50px;
+      left: 24px;
+      animation: floatTwo 12s ease-in infinite;
+    }
+    .floating-button {
+      background-color: var(--colorAccent);
+    }
+  }
+  .magnetic-wrap {
+    display: inline-block;
+    position: absolute;
+    margin: 12px;
+    z-index: 50;
+
+    &.circle {
+      bottom: -70px;
+      left: 80px;
+
+      .round-button {
+        width: 144px;
+        height: 144px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--colorAccent);
+        font-weight: bold;
+        font-size: 16px;
+        z-index: 30;
+        position: relative;
+
+        &.right {
+          background-color: var(--colorLight);
+          color: var(--colorDark);
+          transition: all .3s;
+          overflow: hidden;
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+            transform: translate3d(0, 105%, 0);
+            transition: all .3s;
+            background-color: var(--colorAccent);
+            z-index: -1;
+          }
+        }
+      }
+
+      &:hover {
+        .right {
+          border: 3px solid var(--colorAccent);
+          background-color: var(--colorAccent);
+          color: var(--colorLight);
+        }
+        .right::after {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+  }
+  .splide__slide.outline-text {
+    animation: none;
+    background-position: center 0;
+    transition: all .3s ease-in-out;
+    margin-right: 55px;
+  }
+
+  .splide__slide.outline-text {
+    white-space: nowrap;
+  }
+
+  .splide__slide .dot {
+    height: 28px;
+    width: 28px;
+    border-radius: 100%;
+    background-color: var(--colorAccent);
+    top: 42%;
+    transform: translateY(-50%);
+    position: absolute;
+    right: -33px;
+  }
+}
+@keyframes floatOne {
+	0% {
+		transform: translate3d(0px, 24px, 0) scale(1) rotate(10deg);
+	}
+	50% {
+		transform: translate3d(-20px, 0px, 0) scale(1.15) rotate(0deg);
+	}
+	100% {
+		transform: translate3d(0px, 24px, 0) scale(1) rotate(10deg);
+	}
+}
+
+@keyframes floatTwo {
+	0% {
+		transform: translate3d(10px, 2px, 0) scale(1) rotate(10deg);
+	}
+	50% {
+		transform: translate3d(20px, -10px, 0) scale(0.9) rotate(0deg);
+	}
+	100% {
+		transform: translate3d(10px, 2px, 0) scale(1) rotate(10deg);
+	}
+}
+
+@keyframes floatThree {
+	0% {
+		transform: translate3d(10px, 0px, 0) scale(1) rotate(-18.615deg);
+	}
+	50% {
+		transform: translate3d(0px, 20px, 0) scale(0.9) rotate(-26deg);
+	}
+	100% {
+		transform: translate3d(10px, 0px, 0) scale(1) rotate(-18.615deg);
+	}
+}

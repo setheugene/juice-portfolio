@@ -110,7 +110,7 @@ footer {
       transition: all .3s;
     }
 
-    &.dark-mode {
+    &.color-mode {
       .inner-icon-wrapper {
         transform: rotate(180deg);
       }

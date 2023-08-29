@@ -8,6 +8,7 @@
 @import 'components/homepage-hero.css';
 @import 'components/featured-projects.css';
 @import 'components/footer.css';
+@import 'components/references';
 @import 'components/overlapping-gallery.css';
 @import 'components/project-hero.css';
 @import 'tailwindcss/base';

@@ -20,6 +20,13 @@
   }
 
   .splide__slide.outline-text {
+    animation: none;
+    background-position: center 0;
+    transition: all .3s ease-in-out;
+    margin-right: 55px;
+  }
+
+  .splide__slide.outline-text {
     white-space: nowrap;
   }
 
