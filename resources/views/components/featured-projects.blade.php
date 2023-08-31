@@ -54,7 +54,7 @@ $projects = get_posts($args);
                 <?= get_the_post_thumbnail($project->ID, 'large'); ?>
               </div>
             </div>
-            <div class="col right flex flex-col lg:flex-row mt-6 lg:mt-0">
+            <div class="col right flex flex-col mt-6 lg:mt-0">
               <?php $project_tags = get_the_tags($project->ID); ?>
               <?php if( !empty( $project_tags ) ) : ?>
                 <div class="ml-4 flex items-center mb-8">

@@ -397,18 +397,18 @@ function init() {
     });
   });
 
-  const navHeight = 76;
-  // if ($('featured-projects_grid').length > 0) {
+  // const navHeight = 76;
+  // if ($('.featured-projects_grid').length > 0) {
+  //   console.log('featured found');
   //   const featuredProjectsHeight = $('.featured-projects_grid').height();
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: '.featured-projects_pinned',
-  //       start: 'top top+=108px',
-  //       end: `top top-=${featuredProjectsHeight}px`,
-  //       pin: true,
-  //       // markers: true,
-  //       pinSpacing: false,
-  //     },
+  //   const tl = ScrollTrigger.create({
+  //     trigger: '.featured-projects_pinned',
+  //     start: 'top top+=108px',
+  //     end: `top top-=${featuredProjectsHeight}px`,
+  //     pin: true,
+  //     // markers: true,
+  //     scrub: true,
+  //     pinSpacing: false,
   //   });
   // }
 

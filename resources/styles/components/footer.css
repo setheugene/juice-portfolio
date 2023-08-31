@@ -161,3 +161,53 @@ div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirectio
     color: var(--colorWhite);
   }
 }
+
+#contact-form .expand {
+  position: absolute;
+  top: -82px;
+  right: 13%;
+}
+
+.expand {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: all .2s;
+}
+
+.is-open > .expand {
+  opacity: 1;
+}
+
+.right {
+  display: inline-block;
+  background-color: var(--colorHeaders);
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  display: inline-block;
+  background-color: var(--colorHeaders);
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#form-trigger {
+  transition: all .2s;
+  opacity: 1;
+
+  &.is-open {
+    opacity: 0;
+  }
+}

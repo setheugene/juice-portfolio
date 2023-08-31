@@ -22,7 +22,11 @@
       </div>
     </button>
   </div>
-  <div id="contact-form" class="w-full">
+  <div id="contact-form" class="w-full relative">
+    <button class="expand" data-toggle-trigger-off="#contact-form, footer">
+      <span class="left"></span>
+      <span class="right"></span>
+    </button>
     <div class="container">
       <div class="row">
         <div class="col w-full">
@@ -30,7 +34,7 @@
             <div class="row justify-center">
               <div class="col w-full lg:w-10/12">
                 <div class="row">
-                  <div class="col w-full md:w-[70%] js-fade">
+                  <div class="col w-full md:w-[70%]">
                     <div class="wysiwyg">
                       <?= the_field('footer_content','option') ?? ''; ?>
                     </div>
